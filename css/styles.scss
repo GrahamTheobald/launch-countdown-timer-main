@@ -58,9 +58,15 @@ body {
                 gap: .5rem;
                 align-items: center;
 
+                .number.animate {
+                    animation-name: flip;
+                    animation-duration: 1s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-in-out;
+
+                }
                 .number {
                     background-color: $DarkDesaturatedBlue;
-                    padding: 1rem;
                     border-radius: .3rem;
                     position: relative;
                     overflow: hidden;
@@ -74,13 +80,6 @@ body {
                     p {
                         font-size: 1.6rem;
                     }
-                    p.animate {
-                        animation-name: flip;
-                        animation-duration: 1s;
-                        animation-direction: forwards;
-                        animation-iteration-count: infinite;
-                    }
-
                     .circle {
                         position: absolute;
                         width: .5rem;
@@ -127,10 +126,18 @@ body {
 
 @keyframes flip { 
     0% {
-        font-size: 0rem;
+        transform: perspective(200px) rotateX(0deg) scaleY(1);
+    }
+    49% {
+        transform: perspective(200px) rotateX(90deg) scaleY(1);
+
+    }
+    50% {
+        transform: perspective(200px) rotateX(90deg) scaleY(-1);
+
     }
     100% {
-        font-size: 1.6rem;
+        transform: perspective(200px) rotateX(180deg) scaleY(-1);
     }  
 }
 
@@ -149,7 +156,7 @@ body {
 
                         p {
                             font-size: 0;
-                            font-size: 4rem;
+                            font-size: 3.5rem;
                         }
                     }
 
@@ -160,14 +167,5 @@ body {
                 }
             }
         }
-    }
-
-    @keyframes flip { 
-        0% {
-            font-size: 0rem;
-        }
-        100% {
-            font-size: 4rem;
-        }  
     }
 }

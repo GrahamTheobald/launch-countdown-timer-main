@@ -6,7 +6,7 @@ const TIMES = {
   one: [Infinity]
 }
 
-const date = new Date(2023, 0, 18)
+const date = new Date(2023, 9, 18)
 const formatter = new Intl.NumberFormat('en-US', {minimumIntegerDigits: 2})
 
 const elements = document.querySelectorAll("[data-time]")
@@ -20,15 +20,16 @@ function updateElements() {
     const mod = TIMES[time[1]][0]
     const next = formatter.format(Math.floor(miliSeconds  % mod / time[0]))
     if (next != div.innerText) {
-      div.classList.add('animate')
-      div.innerText = next
+      el.classList.add('animate')
+      setTimeout(() => {
+        div.innerText = next
+      }, 500)
     }
     else {
-      div.classList.remove('animate')
+      el.classList.remove('animate')
     }
   })
 }
 
-updateElements()
 
 setInterval(() => updateElements(), 1000)
