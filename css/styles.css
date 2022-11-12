@@ -33,6 +33,7 @@ body {
   font-size: 1.3rem;
   letter-spacing: 3px;
   text-align: center;
+  padding: 0 2rem;
 }
 .container .top .countdown {
   display: flex;
@@ -46,13 +47,25 @@ body {
 }
 .container .top .countdown .section .number {
   background-color: hsl(236deg, 21%, 26%);
-  font-size: 2rem;
   padding: 1rem;
   border-radius: 0.3rem;
   position: relative;
   overflow: hidden;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
   color: hsl(345deg, 95%, 68%);
   box-shadow: 0 5px hsl(234deg, 17%, 12%);
+}
+.container .top .countdown .section .number p {
+  font-size: 1.6rem;
+}
+.container .top .countdown .section .number p.animate {
+  animation-name: flip;
+  animation-duration: 1s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
 }
 .container .top .countdown .section .number .circle {
   position: absolute;
@@ -92,18 +105,42 @@ body {
   padding: 2rem 0;
 }
 
+@keyframes flip {
+  0% {
+    font-size: 0rem;
+  }
+  100% {
+    font-size: 1.6rem;
+  }
+}
 @media screen and (min-width: 600px) {
   .container .top {
     gap: 5rem;
+  }
+  .container .top .countdown {
+    gap: 2rem;
   }
   .container .top .countdown .section {
     gap: 1rem;
   }
   .container .top .countdown .section .number {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  .container .top .countdown .section .number p {
+    font-size: 0;
     font-size: 4rem;
   }
   .container .top .countdown .section .name {
     font-size: 1rem;
+  }
+  @keyframes flip {
+    0% {
+      font-size: 0rem;
+    }
+    100% {
+      font-size: 4rem;
+    }
   }
 }
 
