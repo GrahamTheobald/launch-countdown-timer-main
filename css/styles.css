@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Red Hat Text";
+}
+
+body {
+  background: url(../images/bg-stars.svg) no-repeat center/cover, url(../images/pattern-hills.svg) no-repeat right bottom/1400px, linear-gradient(to bottom, hsl(235deg, 16%, 14%), hsl(270deg, 25%, 16%));
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  gap: 3rem;
+  padding: 1.5rem;
+}
+.container .top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 8rem 0;
+}
+.container .top .title {
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.container .top .countdown {
+  display: flex;
+  gap: 1rem;
+}
+.container .top .countdown .section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+.container .top .countdown .section .number {
+  background-color: hsl(236deg, 21%, 26%);
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  position: relative;
+  overflow: hidden;
+  color: hsl(345deg, 95%, 68%);
+  box-shadow: 0 5px hsl(234deg, 17%, 12%);
+}
+.container .top .countdown .section .number .circle {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: hsl(234deg, 17%, 12%);
+  border-radius: 50%;
+  top: 50%;
+}
+.container .top .countdown .section .number .left {
+  left: 0;
+  translate: -50% -50%;
+}
+.container .top .countdown .section .number .right {
+  right: 0;
+  translate: 50% -50%;
+}
+.container .top .countdown .section .number::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 50%;
+  left: 0;
+  background-color: hsl(234deg, 17%, 12%);
+  opacity: 0.4;
+  width: 100%;
+}
+.container .top .countdown .section .name {
+  color: hsl(237deg, 18%, 59%);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+.container .bottom {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .container .top {
+    gap: 5rem;
+  }
+  .container .top .countdown .section {
+    gap: 1rem;
+  }
+  .container .top .countdown .section .number {
+    font-size: 4rem;
+  }
+  .container .top .countdown .section .name {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

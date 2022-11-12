@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+$GrayishBlue: hsl(237, 18%, 59%);
+$SoftRed: hsl(345, 95%, 68%);
+$White: hsl(0, 0%, 100%);
+$DarkDesaturatedBlue: hsl(236, 21%, 26%);
+$VeryDarkBlue: hsl(235, 16%, 14%);
+$VeryDarkBlue2: hsl(234, 17%, 12%);
+$VeryDarkPurple: hsl(270, 25%, 16%);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Red Hat Text';
+}
+
+body {
+    background:
+        url(../images/bg-stars.svg) no-repeat center/cover,
+        url(../images/pattern-hills.svg) no-repeat right bottom/1400px,
+        linear-gradient(to bottom, $VeryDarkBlue, $VeryDarkPurple);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    gap: 3rem;
+    padding: 1.5rem;
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+        padding: 8rem 0;
+
+        .title {
+            text-transform: uppercase;
+            color: $White;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 1rem;
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                align-items: center;
+
+                .number {
+                    background-color: $DarkDesaturatedBlue;
+                    font-size: 2rem;
+                    padding: 1rem;
+                    border-radius: .3rem;
+                    position: relative;
+                    overflow: hidden;
+                    color: $SoftRed;
+                    box-shadow: 0 5px $VeryDarkBlue2;
+
+                    .circle {
+                        position: absolute;
+                        width: .5rem;
+                        height: .5rem;
+                        background-color: $VeryDarkBlue2;
+                        border-radius: 50%;
+                        top: 50%;
+                    }
+                    .left {
+                        left: 0;
+                        translate: -50% -50%;
+                    }
+                    .right {
+                        right: 0;
+                        translate: 50% -50%;
+                    }
+                }
+                .number::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 50%;
+                    left: 0;
+                    background-color: $VeryDarkBlue2;
+                    opacity: .4;
+                    width: 100%;
+                }
+
+                .name {
+                    color: $GrayishBlue;
+                    text-transform: uppercase;
+                    font-size: .6rem;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+
+    }
+    
+    .bottom {
+        display: flex;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        .top {
+            gap: 5rem;
+            .countdown {
+                .section {
+                    gap: 1rem;
+
+                    .number {
+                        font-size: 4rem;
+                    }
+
+                    .name {
+                        font-size: 1rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
