@@ -6,7 +6,7 @@ const TIMES = {
   one: [Infinity]
 }
 
-const date = new Date(2023, 9, 18)
+const date = new Date(2023, 0, 18)
 const formatter = new Intl.NumberFormat('en-US', {minimumIntegerDigits: 2})
 
 const elements = document.querySelectorAll("[data-time]")
@@ -31,5 +31,6 @@ function updateElements() {
   })
 }
 
+updateElements()
 
 setInterval(() => updateElements(), 1000)

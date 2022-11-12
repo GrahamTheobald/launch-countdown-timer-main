@@ -62,8 +62,7 @@ body {
                     animation-name: flip;
                     animation-duration: 1s;
                     animation-iteration-count: infinite;
-                    animation-timing-function: ease-in-out;
-
+                    animation-timing-function: linear;
                 }
                 .number {
                     background-color: $DarkDesaturatedBlue;
@@ -121,6 +120,11 @@ body {
         display: flex;
         gap: 2rem;
         padding: 2rem 0;
+
+        img:hover {
+            cursor: pointer;
+            filter: brightness(0%) saturate(100%) invert(49%) sepia(48%) saturate(1538%) hue-rotate(312deg) brightness(103%) contrast(97%);
+        }
     }
 }
 
@@ -130,11 +134,9 @@ body {
     }
     49% {
         transform: perspective(200px) rotateX(90deg) scaleY(1);
-
     }
     50% {
         transform: perspective(200px) rotateX(90deg) scaleY(-1);
-
     }
     100% {
         transform: perspective(200px) rotateX(180deg) scaleY(-1);
@@ -145,25 +147,24 @@ body {
     .container {
         .top {
             gap: 5rem;
+
             .countdown {
                 gap: 2rem;
+
                 .section {
                     gap: 1rem;
-
+                    
                     .number {
                         width: 7.5rem;
                         height: 7.5rem;
-
                         p {
                             font-size: 0;
                             font-size: 3.5rem;
                         }
                     }
-
                     .name {
                         font-size: 1rem;
                     }
-                    
                 }
             }
         }

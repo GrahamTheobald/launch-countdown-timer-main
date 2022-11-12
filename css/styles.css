@@ -49,7 +49,7 @@ body {
   animation-name: flip;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }
 .container .top .countdown .section .number {
   background-color: hsl(236deg, 21%, 26%);
@@ -102,6 +102,10 @@ body {
   display: flex;
   gap: 2rem;
   padding: 2rem 0;
+}
+.container .bottom img:hover {
+  cursor: pointer;
+  filter: brightness(0%) saturate(100%) invert(49%) sepia(48%) saturate(1538%) hue-rotate(312deg) brightness(103%) contrast(97%);
 }
 
 @keyframes flip {
